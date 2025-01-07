@@ -4,9 +4,8 @@ import io.cucumber.java.en.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class StepDefinitions {
-    
+
     private String today;
     private String actualAnswer;
 
@@ -33,13 +32,18 @@ public class StepDefinitions {
     }
 
     @Then("the answer should be \"No\"")
-    public void i_should_be_told() {
+    public void i_should_be_told_no() {
         assertEquals("No", actualAnswer);
-        }
+    }
 
+    @Given("today is Friday")
+    public void today_is_friday() {
+        today = "Friday";
     }
-    class IsItFriday {
-        static String isItFriday(String today) {
-            return "Friday".equals(today) ? "Yes" : "No";
-        }
+
+    @Then("I should be told \"TGIF\"")
+    public void i_should_be_told_tgif() {
+        assertEquals("TGIF", actualAnswer);
     }
+
+}

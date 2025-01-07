@@ -21,9 +21,19 @@ public class StepDefinitions {
     public void theScenarioPasses() {
     }
 
+    @Given("today is Friday")
+    public void today_is_friday() {
+        this.today = "Friday";
+    }
+
     @Given("today is Sunday")
     public void today_is_sunday() {
-        today = "Sunday";
+        this.today = "Sunday";
+    }
+
+    @Given("today is anything else!")
+    public void today_is_anything_else() {
+        this.today = "anything else!";
     }
 
     @When("I ask if it's Friday")
@@ -31,19 +41,9 @@ public class StepDefinitions {
         actualAnswer = IsItFriday.isItFriday(today);
     }
 
-    @Then("the answer should be \"No\"")
-    public void i_should_be_told_no() {
-        assertEquals("No", actualAnswer);
-    }
-
-    @Given("today is Friday")
-    public void today_is_friday() {
-        today = "Friday";
-    }
-
-    @Then("I should be told \"TGIF\"")
-    public void i_should_be_told_tgif() {
-        assertEquals("TGIF", actualAnswer);
+    @Then("I should be told {string}")
+    public void i_should_be_told(String expectedAnswer) {
+        assertEquals(expectedAnswer, actualAnswer);
     }
 
 }

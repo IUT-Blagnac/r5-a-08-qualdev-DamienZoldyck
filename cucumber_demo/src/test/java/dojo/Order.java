@@ -6,11 +6,8 @@ import java.util.List;
 public class Order {
     private String owner;
     private String target;
-    private List<String> cocktails;
-
-    public Order() {
-        cocktails = new ArrayList<>();
-    }
+    private List<String> cocktails = new ArrayList<>();
+    private String message;
 
     public void declareOwner(String owner) {
         this.owner = owner;
@@ -22,5 +19,13 @@ public class Order {
 
     public List<String> getCocktails() {
         return cocktails;
+    }
+
+    public void addMessage(String message) {
+        this.message = message;
+    }
+
+    public String getTicket() {
+        return "From " + owner + " to " + target + ": " + message;
     }
 }

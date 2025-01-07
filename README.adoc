@@ -23,6 +23,6 @@ Feature: Is it Friday yet?
 ---
 
 .Exemple d'image insérée en asciidoc
-image::artifacts-r303.svg[width=80%]
+image::TP1.png[width=80%]
 
 == TP2...

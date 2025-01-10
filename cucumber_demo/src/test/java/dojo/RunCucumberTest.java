@@ -1,7 +1,7 @@
 package dojo;
 
-import cucumber.api.junit.Cucumber;
+import io.cucumber.junit.Cucumber;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)  
+@RunWith(Cucumber.class)
 public class RunCucumberTest { }

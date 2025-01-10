@@ -1,31 +1,27 @@
 package dojo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Order {
-    private String owner;
-    private String target;
-    private List<String> cocktails = new ArrayList<>();
-    private String message;
+    private String from;
+    private String to;
+    private String message = "";
 
-    public void declareOwner(String owner) {
-        this.owner = owner;
+    public Order(String from, String to) {
+        this.from = from;
+        this.to = to;
     }
 
-    public void declareTarget(String target) {
-        this.target = target;
+    public String getTicketMessage() {
+        if (message.isEmpty()) {
+            return String.format("From %s to %s", from, to);
+        }
+        return String.format("From %s to %s: %s", from, to, message);
     }
 
-    public List<String> getCocktails() {
-        return cocktails;
-    }
-
-    public void addMessage(String message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 
-    public String getTicket() {
-        return "From " + owner + " to " + target + ": " + message;
+    public String getTo() {
+        return to;
     }
 }
